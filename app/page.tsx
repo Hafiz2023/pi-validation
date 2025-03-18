@@ -1,8 +1,9 @@
 import NetworkLanding from "./NetworkLanding/page";
 import MiningSection from "./MiningSection/page";
-import Footer from "./Footer/page";
+
 import MiningSectionTwo from "./MiningSectionTwo/page";
-import FooterOne from "./FooterOne/page";
+import FooterOne from "./Footer/page";
+import Footer from "./Footer/page";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <NetworkLanding />
       <MiningSection />
       <MiningSectionTwo />
-      <FooterOne />
+      <Footer />
     </div>
   );
 }
