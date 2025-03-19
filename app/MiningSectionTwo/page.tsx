@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function MiningSectionTwo() {
     return (
-      <div className="w-full bg-gradient-to-r from-purple-900 to-indigo-800 py-20 px-6 md:px-20 flex flex-col md:flex-row items-center">
+      <div className="w-full bg-gradient-to-r bg-[#703D92] text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center">
         
         {/* Left Side - Image */}
         <div className="image-container md:w-1/2 flex justify-center relative h-[400px]">
@@ -11,7 +11,7 @@ export default function MiningSectionTwo() {
             alt="Pi Mining App" 
             width={450}  
             height={850} 
-            className="w-80 md:w-[350px] h-auto bg-gradient-to-r from-purple-900 to-indigo-800 p-4 rounded-lg"
+            className="w-80 md:w-[350px] h-auto bg-gradient-to-r bg-[#703D92] p-4 rounded-lg"
           />
         </div>
   

@@ -10,7 +10,7 @@ const NetworkLanding = () => {
   const router = useRouter(); // Navigation Hook
 
   return (
-    <div className="bg-[#2D1B4A] text-white min-h-screen flex flex-col">
+    <div className="bg-[#703D92] text-white min-h-screen flex flex-col">
       {/* Navbar */}
       <nav className="w-full flex justify-between items-center py-4 px-8">
         <div className="flex justify-center md:justify-end">
