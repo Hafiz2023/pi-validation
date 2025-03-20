@@ -58,4 +58,5 @@ const iconData = [
   { name: "KYC", src: "/kyc.png" },
   { name: "Chat", src: "/chat.png" },
   { name: "Profiles", src: "/profile.png" },
+
 ];

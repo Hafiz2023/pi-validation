@@ -98,7 +98,7 @@ const UnlockPiWallet = () => {
       <h2 className="text-2xl font-semibold mb-4">Unlock Pi Wallet</h2>
 
       <textarea
-        className="w-full md:w-2/3 lg:w-1/2 h-32 border   border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 text-black"
+        className="w-full md:w-2/6 lg:w-1/2 h-40 border   border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 text-black"
         placeholder="Enter your 24-word passphrase here"
         value={passphrase}
         onChange={handleChange}
