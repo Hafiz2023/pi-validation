@@ -54,8 +54,8 @@ export default function PiBrowser() {
       </div>
 
       {/* Explore Button */}
-      <button className="mt-10 bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-6 rounded-full text-sm font-semibold shadow-md transition">
-        Explore the Testnet Ecosystem
+      <button className="flex items-center gap-2 bg-[#703D92] hover:bg-[#5a2f75] text-white py-3 px-6 rounded-lg text-sm font-semibold shadow-md transition">
+        Explore the Ecosystem
       </button>
     </div>
   );
