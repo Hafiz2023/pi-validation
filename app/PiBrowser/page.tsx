@@ -48,13 +48,13 @@ export default function PiBrowser() {
                 className="transition-all duration-300 hover:scale-125"
               />
             </div>
-            <p className="text-sm font-semibold text-white">{icon.name}</p>
+            <p className="text-sm font-normal text-[#703D92]">{icon.name}</p>
           </div>
         ))}
       </div>
 
       {/* Explore Button */}
-      <button className="flex items-center gap-2 bg-[#703D92] hover:bg-[#5a2f75] text-white py-3 px-6 rounded-lg text-sm font-semibold shadow-md transition">
+      <button className="flex items-center gap-2 bg-[#703D92]  hover:bg-[#5a2f75] text-white py-3 px-6 rounded-lg text-sm font-semibold shadow-md transition mt-5">
         Explore the Ecosystem
       </button>
     </div>
@@ -63,13 +63,13 @@ export default function PiBrowser() {
 
 // Icon Data
 const iconData = [
-  { name: "Fireside", src: "/fireside.png" },
-  { name: "Wallet", src: "/wallet.png", link: "/UnlockPiWallet" },
-  { name: "Brainstorm", src: "/brainstorm.png" },
-  { name: "Mine", src: "/mine.png" },
-  { name: "Blockchain", src: "/blockchain.png" },
-  { name: "Develop", src: "/develop.png" },
-  { name: "KYC", src: "/kyc.png" },
-  { name: "Chat", src: "/chat.png" },
-  { name: "Profiles", src: "/profile.png" },
+  { name: "Fireside", src: "/fireside.png", description: "Community Talks"},
+  { name: "Wallet", src: "/wallet.png", link: "/UnlockPiWallet", description: "Unlock Pi Wallet" },
+  { name: "Brainstorm", src: "/brainstorm.png", description: "Brainstorm Ideas" },
+  { name: "Mine", src: "/mine.png", description: "Mining" },
+  { name: "Blockchain", src: "/blockchain.png", description: "Blockchain" },
+  { name: "Develop", src: "/develop.png", description: "Develop" },
+  { name: "KYC", src: "/kyc.png", description: "KYC" },
+  { name: "Chat", src: "/chat.png", description: "Chat" },
+  { name: "Profiles", src: "/profile.png",  description: "Profiles" },
 ];
