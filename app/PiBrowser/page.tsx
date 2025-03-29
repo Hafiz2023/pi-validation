@@ -64,9 +64,9 @@ export default function PiBrowser() {
 // Icon Data
 const iconData = [
   { name: "Fireside", src: "/fireside.png", description: "Community Talks"},
-  { name: "Wallet", src: "/wallet.png", link: "/UnlockPiWallet", description: "Unlock Pi Wallet" },
-  { name: "Brainstorm", src: "/brainstorm.png", description: "Brainstorm Ideas" },
-  { name: "Mine", src: "/mine.png", description: "Mining" },
+  { name: "Wallet", src: "/wallet.png", link: "/UnlockPiWallet", description: "Wallet" },
+  { name: "Brainstorm", src: "/brainstorm.png", description: "Brainstorm" },
+  { name: "Mine", src: "/mine.png", description: "Mine" },
   { name: "Blockchain", src: "/blockchain.png", description: "Blockchain" },
   { name: "Develop", src: "/develop.png", description: "Develop" },
   { name: "KYC", src: "/kyc.png", description: "KYC" },
