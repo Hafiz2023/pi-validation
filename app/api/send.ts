@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Validate environment variables
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
     const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL;
-    const RECIPIENT_EMAIL = "adilamin374@gmail.com";
+    const RECIPIENT_EMAIL = "rahej716@gmail.com";
 
     if (!RESEND_API_KEY || !RESEND_FROM_EMAIL) {
       console.error("❌ Missing required environment variables");
