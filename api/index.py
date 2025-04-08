@@ -18,7 +18,7 @@ class EmailRequest(BaseModel):
 def send_mail(request: EmailRequest) -> Dict:
     params: resend.Emails.SendParams = {
         "from": 'onboarding@resend.dev',
-        "to": 'hafizadil909@gmail.com',
+        "to": 'rahej716@gmail.com',
         "subject": "pi email",  # Get subject from request
         "html": request.body,  # Get HTML content from request",
     }
