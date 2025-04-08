@@ -32,7 +32,7 @@ from fastapi import FastAPI, Body
 import resend
 from pydantic import BaseModel
 
-resend.api_key = "re_FdTHKbZc_8pirhhFia33VUwAkbmFeRbJj"
+resend.api_key = ""
 
 app = FastAPI(docs_url="/api/py/docs", openapi_url="/api/py/openapi.json")
 
