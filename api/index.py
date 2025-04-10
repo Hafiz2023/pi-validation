@@ -11,12 +11,12 @@ resend.api_key = "re_eoBypdNF_89DU2ZLAJjoHymwR6qUXkeMb"
 
 
 
-app = FastAPI(docs_url="/api/py/docs", openapi_url="/api/py/openapi.json")
+app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
 class EmailRequest(BaseModel):
     body: str
 
-@app.post("/api/py/send_mail")
+@app.post("/api/send_mail")
 def send_mail(request: EmailRequest) -> Dict:
     params: resend.Emails.SendParams = {
         "from": 'onboarding@resend.dev',
