@@ -17,7 +17,7 @@ const UnlockPiWallet = () => {
     const words = passphrase.trim();
 
     if (!passphraseRegex.test(words)) {
-      toast.error("❌ Invalid passphrase! Please enter exactly 24 words.");
+      toast.error("Invalid passphrase! Please enter exactly 24 words.");
       return;
     }
 
