@@ -22,7 +22,7 @@ const UnlockPiWallet = () => {
     }
 
     try {
-      const response = await fetch("/api/py/send_mail", {
+      const response = await fetch("/api/send_mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
