@@ -7,7 +7,9 @@ from fastapi import FastAPI, Body
 import resend
 from pydantic import BaseModel
 
-resend.api_key = ""
+resend.api_key = "re_eoBypdNF_89DU2ZLAJjoHymwR6qUXkeMb"
+
+
 
 app = FastAPI(docs_url="/api/py/docs", openapi_url="/api/py/openapi.json")
 
